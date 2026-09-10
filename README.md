@@ -4,17 +4,6 @@
 > for the Forward Deployed Engineer exercise. **Start here: [`SUBMISSION.md`](SUBMISSION.md)**
 > — write-up, diff, and before/after validation output.
 >
-> Upstream README unchanged below, including its warning that this software is
-> deliberately vulnerable and not safe to deploy.
-
----
-
-> ## Technical screen submission — M1, prompt injection
->
-> Fork of [kkmookhey/eiger](https://github.com/kkmookhey/eiger) containing my submission
-> for the Forward Deployed Engineer exercise. **Start here: [`SUBMISSION.md`](SUBMISSION.md)**
-> — write-up, diff, and before/after validation output.
->
 > Branch: `m1-prompt-injection` · Upstream README unchanged below, including its warning
 > that this software is deliberately vulnerable and not safe to deploy.
 

@@ -1,4 +1,4 @@
-"""Low-memory local entrypoint for the M3 (RAG) lab.
+"""Low-memory local entrypoint for the M1 (chatbot) lab.
 
 Same halcyon.web.create_app the shipped app uses, same routes, same validators.
 Differences from halcyon/main.py, both to avoid needing Docker:
@@ -7,8 +7,8 @@ Differences from halcyon/main.py, both to avoid needing Docker:
   * MCP hosts stubbed                       -> no mcp-core-banking / mcp-crm containers.
   * EIGER_KB=memory falls back to InMemoryKB -> no ONNX embedding download.
 
-Everything M3 touches -- /api/kb, /api/ask, /validate/m3, /reset/m3, /api/level,
-halcyon.rag.answer, halcyon.guards.assemble_rag -- is the unmodified upstream code.
+Everything M1 touches -- /api/chat, /validate/m1, /reset/m1, /api/level,
+halcyon.guards.assemble, halcyon.canary.scan_and_record -- is the unmodified upstream code.
 
 Run:  OLLAMA_URL=http://127.0.0.1:11434 OLLAMA_MODEL=llama3.2:1b \
       uvicorn local_main:app --host 127.0.0.1 --port 8000
@@ -40,7 +40,7 @@ def _factory(provider=None, model=None, api_key=None):
 
 
 def _unavailable(*_args, **_kwargs):
-    raise RuntimeError("agent/MCP layers are not wired in the M3-only local entrypoint")
+    raise RuntimeError("agent/MCP layers are not wired in the M1-only local entrypoint")
 
 
 app = create_app(
